@@ -83,7 +83,7 @@ typedef unsigned char (far *gram_t)[320];
 
 /********** module "SCNKEY" *************/
 
-	extern volatile scantable[128];
+	extern volatile char scantable[128];
 #if __cplusplus
 	extern "C"
 #endif
