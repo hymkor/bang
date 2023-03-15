@@ -96,4 +96,11 @@ sprchk.exe : $(SPRCHK)
 
 shiftspr.exe : shiftspr.cpp
 	tcc shiftspr.cpp
-
+
+clean :
+	for %I in ($(BANG0)) do del %I
+	for %I in ($(BANG1)) do del %I
+	for %I in ($(BANG2)) do del %I
+	for %I in ($(PE)) do del %I
+	for %I in ($(ME)) do del %I
+	for %I in (bang.exe pe.exe me.exe sprchk.exe shiftspr.exe) do del %I
