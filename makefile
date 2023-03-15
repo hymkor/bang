@@ -24,7 +24,8 @@
 ###	ゲームスタート時、オーバー時、面クリア時に簡単な音楽が鳴るようになった。
 ###
 
-all : bang.exe pe.exe me.exe sprchk.exe shiftspr.exe
+all : bang.exe
+# pe.exe me.exe sprchk.exe shiftspr.exe
 
 CC=tcc
 LK=tcc
@@ -34,8 +35,7 @@ TMPFILE=$(TMP)tmpfile
 	$(CC) -c {$< }
 
 .cpp.obj :
-	$(CC) -c {$< }
-
+	$(CC) -c $<
 #
 # ばんぐぞーきん ( ばんぐほーき ver.3 )
 #
@@ -65,7 +65,7 @@ enemy2.obj : sprite.h enemy.h game.h
 enemy3.obj : sprite.h enemy.h game.h
 
 scnkey.obj : scnkey.asm
-	masm /ml scnkey.asm;
+	tasm /ml scnkey.asm;
 #
 # パターンエディタ
 #
